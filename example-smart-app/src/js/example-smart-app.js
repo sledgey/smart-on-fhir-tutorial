@@ -64,7 +64,7 @@
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
 
-          p.warfarin = warfarin[0].dosage.text + ' -> ' + warfarin[0].dosage.route.text;
+          //p.warfarin = warfarin[0].dosage.text + ' -> ' + warfarin[0].dosage.route.text;
           
           if(typeof height[0] != 'undefined' && typeof height[0].valueQuantity.value != 'undefined' && typeof height[0].valueQuantity.unit != 'undefined') {
               p.height = height[0].valueQuantity.value + ' ' + height[0].valueQuantity.unit;
