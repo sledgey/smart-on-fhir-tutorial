@@ -52,6 +52,14 @@
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
 
+          if(typeof height[0] != 'undefined' && typeof height[0].valueQuantity.value != 'undefined' && typeof height[0].valueQuantity.unit != 'undefined') {
+              p.height = height[0].valueQuantity.value + ' ' + height[0].valueQuantity.unit;
+          }
+
+          if(typeof weight[0] != 'undefined' && typeof weight[0].valueQuantity.value != 'undefined' && typeof weight[0].valueQuantity.unit != 'undefined') {
+              p.weight = weight[0].valueQuantity.value + ' ' + weight[0].valueQuantity.unit;
+          }
+
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
           }
