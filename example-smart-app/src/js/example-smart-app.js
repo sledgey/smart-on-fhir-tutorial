@@ -51,7 +51,7 @@
             lname = patient.name[0].family.join(' ');
           }
 
-          var warfarin = byCodes('4461-0');
+          //var warfarin = byCodes('4461-0');
           var height = byCodes('8302-2');
           var height = byCodes('29463-7');
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
