@@ -25,8 +25,6 @@
                   });
         $.when(pt, obv).fail(onError);
 
-/*
-*/
         var med = smart.patient.api.fetchAll({
                     type: 'Medication',
                     query: {
@@ -88,9 +86,11 @@
           ret.resolve(p);
         });
 
+/*
         $.when(pt, med).done(function(patient, med) {
           p.warfarin = warfarin[0].dosage.text + ' -> ' + warfarin[0].dosage.route.text;
         });
+*/
 
       } else {
         onError();
