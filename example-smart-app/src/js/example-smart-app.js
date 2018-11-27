@@ -93,8 +93,6 @@
         $.when(pt, med).done(function(patient, med) {
           var warfarin = byCodes('4461-0');
 
-          var p = defaultPatient();
-
           //p.warfarin = 'blee'; 
           ret.resolve(p);
         });
