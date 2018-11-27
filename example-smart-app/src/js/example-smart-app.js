@@ -25,6 +25,7 @@
                   });
         $.when(pt, obv).fail(onError);
 
+/*
         var med = smart.patient.api.fetchAll({
                     type: 'Medication',
                     query: {
@@ -36,6 +37,7 @@
                   });
 
         $.when(pt, med).fail(onError);
+*/
 
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
@@ -155,11 +157,11 @@
     $('#birthdate').html(p.birthdate);
     $('#height').html(p.height);
     $('#weight').html(p.weight);
-    $('#warfarin').html(p.warfarin);
     $('#systolicbp').html(p.systolicbp);
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
+    $('#warfarin').html(p.warfarin);
   };
 
 })(window);
