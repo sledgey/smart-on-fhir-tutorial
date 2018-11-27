@@ -29,7 +29,7 @@
                     type: 'Medication',
                     query: {
                       code: {
-                        $or: ['http://loinc.org|4461-0'
+                        $or: ['http://loinc.org|4461-0', 'http://loinc.org|4460-2'
                              ]
                       }
                     }
@@ -110,11 +110,11 @@
       birthdate: {value: ''},
       height: {value: ''},
       weight: {value: ''},
-      warfarin: {value: ''},
       systolicbp: {value: ''},
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
+      warfarin: {value: ''}
     };
   }
 
