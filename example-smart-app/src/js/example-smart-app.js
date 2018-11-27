@@ -64,6 +64,7 @@
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
+          p.weight = getQuantityValueAndUnit(weight[0]);
 
           if(typeof height[0] != 'undefined' && typeof height[0].valueQuantity.value != 'undefined' && typeof height[0].valueQuantity.unit != 'undefined') {
               p.height = height[0].valueQuantity.value + ' ' + height[0].valueQuantity.unit;
@@ -92,7 +93,10 @@
         $.when(pt, med).done(function(patient, med) {
           var warfarin = byCodes('4461-0');
 
-          p.warfarin = 'blee'; 
+          var p = defaultPatient();
+
+          //p.warfarin = 'blee'; 
+          ret.resolve(p);
         });
 
       } else {
