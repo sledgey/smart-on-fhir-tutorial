@@ -25,20 +25,6 @@
                   });
         $.when(pt, obv).fail(onError);
 
-/*
-*/
-        var med = smart.patient.api.fetchAll({
-                    type: 'Medication',
-                    query: {
-                      code: {
-                        $or: ['http://loinc.org|4461-0', 'http://loinc.org|4460-2'
-                             ]
-                      }
-                    }
-                  });
-
-        $.when(pt, med).fail(onError);
-
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
