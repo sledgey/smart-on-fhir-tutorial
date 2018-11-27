@@ -94,7 +94,7 @@
           var warfarin = byCodes('4461-0');
 
           //p.warfarin = 'blee'; 
-          ret.resolve(p);
+          //ret.resolve(p);
         });
 
       } else {
