@@ -51,7 +51,6 @@
             lname = patient.name[0].family.join(' ');
           }
 
-          //var warfarin = byCodes('4461-0');
           var height = byCodes('8302-2');
           var weight = byCodes('29463-7');
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
@@ -88,11 +87,6 @@
           ret.resolve(p);
         });
 
-/*
-        $.when(pt, med).done(function(patient, med) {
-          p.warfarin = warfarin[0].dosage.text + ' -> ' + warfarin[0].dosage.route.text;
-        });
-*/
 
       } else {
         onError();
@@ -116,7 +110,6 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
-      warfarin: {value: ''}
     };
   }
 
@@ -161,7 +154,6 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
-    $('#warfarin').html(p.warfarin);
   };
 
 })(window);
