@@ -25,6 +25,20 @@
                   });
         $.when(pt, obv).fail(onError);
 
+/*
+*/
+        var med = smart.patient.api.fetchAll({
+                    type: 'Medication',
+                    query: {
+                      code: {
+                        $or: ['http://loinc.org|4461-0'
+                             ]
+                      }
+                    }
+                  });
+
+        $.when(pt, med).fail(onError);
+
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
@@ -37,6 +51,7 @@
             lname = patient.name[0].family.join(' ');
           }
 
+          //var warfarin = byCodes('4461-0');
           var height = byCodes('8302-2');
           var weight = byCodes('29463-7');
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
@@ -72,6 +87,11 @@
 
           ret.resolve(p);
         });
+
+        $.when(pt, med).done(function(patient, med) {
+          p.warfarin = warfarin[0].dosage.text + ' -> ' + warfarin[0].dosage.route.text;
+        });
+
       } else {
         onError();
       }
@@ -89,6 +109,8 @@
       gender: {value: ''},
       birthdate: {value: ''},
       height: {value: ''},
+      weight: {value: ''},
+      warfarin: {value: ''},
       systolicbp: {value: ''},
       diastolicbp: {value: ''},
       ldl: {value: ''},
@@ -133,6 +155,7 @@
     $('#birthdate').html(p.birthdate);
     $('#height').html(p.height);
     $('#weight').html(p.weight);
+    $('#warfarin').html(p.warfarin);
     $('#systolicbp').html(p.systolicbp);
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
