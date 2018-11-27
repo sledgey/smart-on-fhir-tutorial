@@ -110,6 +110,7 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
+      warfarin: {value: ''}
     };
   }
 
@@ -154,6 +155,7 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
+    $('#warfarin').html(p.warfarin);
   };
 
 })(window);
