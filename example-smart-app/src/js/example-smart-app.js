@@ -88,12 +88,12 @@
         });
 
 /*
+*/
         $.when(pt, med).done(function(patient, med) {
           var warfarin = byCodes('4461-0');
 
-          p.warfarin = warfarin[0].dosage.text + ' -> ' + warfarin[0].dosage.route.text;
+          //p.warfarin = warfarin[0].dosage.text + ' -> ' + warfarin[0].dosage.route.text;
         });
-*/
 
       } else {
         onError();
