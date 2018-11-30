@@ -31,7 +31,7 @@
                     type: 'Medication',
                     query: {
                       code: {
-                        $or: ['http://loinc.org|4461-0', 'http://loinc.org|4460-2'
+                        $or: ['http://loinc.org|4461-0', 'http://loinc.org|4266-3'
                              ]
                       }
                     }
