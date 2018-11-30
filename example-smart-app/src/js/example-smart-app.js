@@ -90,7 +90,7 @@
 /*
 */
         $.when(pt, med).done(function(patient, med) {
-          var warfarin = byCodes('4461-0');
+          var warfarin = byCodes('4459-4');
 
           //p.warfarin = warfarin[0].dosage.text + ' -> '; //+ warfarin[0].dosage.route.text;
           p.warfarin = warfarin[0].text;
