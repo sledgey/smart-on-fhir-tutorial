@@ -31,7 +31,7 @@
                     type: 'Medication',
                     query: {
                       code: {
-                        $or: ['http://loinc.org|4461-0', 'http://loinc.org|4266-3'
+                        $or: ['http://loinc.org|4461-0', 'http://loinc.org|4459-4'
                              ]
                       }
                     }
@@ -93,7 +93,7 @@
           var warfarin = byCodes('4461-0');
 
           //p.warfarin = warfarin[0].dosage.text + ' -> '; //+ warfarin[0].dosage.route.text;
-          p.warfarin = 'blee';
+          p.warfarin = warfarin[0].text;
         });
 
       } else {
