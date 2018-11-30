@@ -31,8 +31,8 @@
                     type: 'Medication',
                     query: {
                       code: {
-                        $or: ['http://loinc.org|4461-0', 'http://loinc.org|4459-4'
-                             ]
+                              'https://rxnav.nlm.nih.gov/REST/drugs?name=Vancomycin'
+                             
                       }
                     }
                   });
@@ -55,7 +55,7 @@
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
-          var warfarin = byCodes('4459-4');
+          var warfarin = byCodes('Vancomycin');
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
@@ -90,7 +90,7 @@
 /*
 */
         $.when(pt, med).done(function(patient, med) {
-          var warfarin = byCodes('4459-4');
+          var warfarin = byCodes('Vancomycin');
 
           //p.warfarin = warfarin[0].dosage.text + ' -> '; //+ warfarin[0].dosage.route.text;
           p.warfarin = warfarin[0].text;
