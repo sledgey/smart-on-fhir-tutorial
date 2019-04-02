@@ -26,7 +26,6 @@
         $.when(pt, obv).fail(onError);
 
 /*
-*/
         var med = smart.patient.api.fetchAll({
                     type: 'Medication',
                     query: {
@@ -36,6 +35,7 @@
                       }
                     }
                   });
+*/
 
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
@@ -88,13 +88,13 @@
         });
 
 /*
-*/
         $.when(pt, med).done(function(patient, med) {
           var warfarin = byCodes('Vancomycin');
 
           //p.warfarin = warfarin[0].dosage.text + ' -> '; //+ warfarin[0].dosage.route.text;
           p.warfarin = warfarin[0].text;
         });
+*/
 
       } else {
         onError();
